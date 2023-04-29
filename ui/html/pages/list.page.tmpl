@@ -1,0 +1,35 @@
+{{template "base" .}}
+ 
+{{define "title"}}Posts list{{end}}
+ 
+{{define "main"}}
+<h2>List page</h2>
+
+  <table class="table">
+      <thead>
+        <th>Id</th>
+        <th>Title</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody>
+        {{range . }}
+          <tr>
+              <td>{{.Id}}</td>
+              <td> <a href="/post?id={{.Id}}"> {{.Title}} </a> </td>
+              <td> 
+                <a href="/redact?id={{.Id}}"> 
+                    <button class="btn btn-sm btn-primary">redact</button> 
+                </a>  
+              </td>
+              <td> 
+                <a href="/delete?id={{.Id}}"> 
+                    <button class="btn btn-sm btn-danger">delete</button> 
+                </a>  
+              </td>              
+          </tr>
+        {{end}}
+      </tbody>
+  </table>
+
+{{end}}

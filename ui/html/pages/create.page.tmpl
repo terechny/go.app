@@ -1,0 +1,26 @@
+{{template "base" .}}
+ 
+{{define "title"}}Create post{{end}}
+ 
+{{define "main"}}
+<h2>Create page</h2>
+<div class="row">
+  <div class="col-sm-8">
+    <form enctype="multipart/form-data" method="POST" action="store">
+      <div class="mt-4">    
+          <input class="form-control" name="title" placeholder="Title">
+      </div>
+      <div class="mt-4">
+          <textarea class="form-control" rows="10" name="text"></textarea>
+      </div>
+      <div class="mt-4">
+          <input type="file" class="form-control" name="file" />
+      </div>
+      
+      <div class="mt-4">
+         <button type="submit" class="btn btn-primary">Add</button>
+      </div>  
+    </form>
+  </div>
+</div>
+{{end}}

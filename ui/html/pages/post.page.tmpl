@@ -1,0 +1,21 @@
+{{template "base" .}}
+ 
+{{define "title"}}Post{{end}}
+ 
+{{define "main"}}
+
+<div class="row">
+  
+  <div class="col-sm-6">
+  
+    <h2>{{ .Title }}</h2>
+     <p class="card-text"><small class="text-muted">{{ .Date }}</small></p>
+    <img src="/image/{{ .Image }}" width="600">
+    <div class="pt-4">
+      <p>{{ .Text }}</p> 
+    </div>
+  </div>
+
+</div>
+
+{{end}}

@@ -1,0 +1,22 @@
+{{template "base" .}}
+ 
+{{define "title"}}Post{{end}}
+ 
+{{define "main"}}
+
+<div>
+  <form method="POST" action="update">
+    <div class="mt-4">    
+        <input class="form-control" name="title" placeholder="Title" value="{{ .Title }}">
+    </div>
+    <div class="mt-4">
+        <textarea class="form-control" name="text" rows="8">{{ .Text }}</textarea>
+    </div>
+    <input type="hidden" name="id" value="{{ .Id }}">
+    <div class="mt-4">
+       <button type="submit" class="btn btn-primary">Redact</button>
+    </div>  
+  </form>
+</div>
+
+{{end}}
